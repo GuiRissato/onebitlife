@@ -1,5 +1,7 @@
 import React from "react"
 import { Text, ColorValue, StyleSheet, TouchableOpacity } from "react-native"
+import { useNavigation } from "@react-navigation/native"
+import { StackNavigator } from "../../../routes/allpages";
 
 interface Habit{
   habitArea: string,
@@ -7,8 +9,10 @@ interface Habit{
 }
 
 export default function CreateHabit(habit: Habit){
+  const navigation = useNavigation<StackNavigator>();
+
   function handleCreate(){
-    console.log("cliquei", habit.habitArea)
+   navigation.navigate('HabitPage',{create:true, habitArea: habit.habitArea.toString()})
   }
 return(
   <TouchableOpacity

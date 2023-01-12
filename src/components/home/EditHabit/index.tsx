@@ -31,9 +31,7 @@ function handleCheck(){
         style={[styles.check, {borderColor:editHabit.checkColor}]}
         onPress={handleCheck}
       >
-
       </TouchableOpacity>
-
     </TouchableOpacity>
   )
 
@@ -67,5 +65,4 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius:10,
   },
-
 })

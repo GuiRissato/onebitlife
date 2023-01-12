@@ -3,12 +3,13 @@ import React from 'react';
 import { StyleSheet, View, ScrollView, Text } from 'react-native';
 import DefaultButton from '../../components/common/DefaultButton/index';
 import ExplanationCard from '../../components/explanation/ExplanationCard';
+import { StackNavigator } from '../../routes/allpages';
 
 
 export default function AppExplanation() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigator>();
   const handleSetShowHome = () => {
-    navigation.navigate('Home', {undefined});
+    navigation.navigate('Home');
   }
 
   return (
