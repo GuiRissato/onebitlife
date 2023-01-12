@@ -1,8 +1,10 @@
-import { useNavigation, useRoute, RouteProp, ParamListBase } from '@react-navigation/native';
-import React, {useState,useEffect} from 'react';
+import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
+import React, { useMemo, useState} from 'react';
 import { Image, ScrollView, StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 import { RootStackParamsList } from '../../routes/allpages';
-import SelectHabit from './SelectHabit';
+import SelectHabit from '../../components/HabitPage/SelectHabit';
+import SelectFrequency from '../../components/HabitPage/SelectFrequency';
+import Notification from '../../components/HabitPage/Notification';
 
 
 type RouteHabitScreenProps = RouteProp<RootStackParamsList,'HabitPage'>
@@ -11,7 +13,12 @@ export default function HabitPage(){
   const navigation = useNavigation();
   const route = useRoute<RouteHabitScreenProps>();
   const {create,habitArea} = route.params
+  const [habitInput,setHabitInput] = useState<string>();
   
+  const input = useMemo(()=>{
+    console.log(habitInput)
+  },[habitInput])
+
   return(
     <View style={styles.container}>
       <ScrollView>
@@ -36,6 +43,9 @@ export default function HabitPage(){
             </View>
             <Text style={styles.inputText}>Hábito</Text>
             <SelectHabit/>
+            <Text style={styles.inputText}>Frequência</Text>
+            <SelectFrequency/>
+            <Notification/>
           </View>
         </View>
       </ScrollView>

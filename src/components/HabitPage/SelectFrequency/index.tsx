@@ -1,42 +1,33 @@
-import { useNavigation } from '@react-navigation/native'
-import React, { useMemo, useState } from 'react'
-import { Image, StyleSheet } from 'react-native';
+import { RouteProp, useRoute } from '@react-navigation/native';
+import React, { useState } from 'react';
+import {Image,View,StyleSheet} from "react-native";
 import { SelectList } from 'react-native-dropdown-select-list';
-import {dataMind,dataMoney,dataBody,dataFun} from '../../../components/Database/HabitData';
+import { RootStackParamsList } from '../../../routes/allpages';
 
-import { Habit } from '../../Home';
+type RouteHabitScreenProps = RouteProp<RootStackParamsList,'SelectFrequency'>
 
-export default function SelectHabit(habit:Habit) {
-  
-  const navigation = useNavigation();
-  
-  
-  const [selected,setSelected] = useState(
-    habit?.habitArea ? habit?.habitArea : "-" 
-  );
+export default function SelectFrequency (){
+  const route = useRoute<RouteHabitScreenProps>();
+  let {habit,habitFrequency,InputFrequency} = route.params
+  const [selected, setSelected] = useState(
+    habitFrequency ? habitFrequency : "-"
+  )  
+    const data = [
+      {key:"Diario", value:"Diario"},
+      {key:"Semanal", value:"Semanal"},
+      {key:"Mensal", value:"Mensal"},
+    ]
 
-  console.log(habit?.habitArea)
-
-  const data = useMemo(()=>{
-    if(habit?.habitArea == 'Mente'){
-      return dataMind
+    const handleInputFrequency = (input:string) =>{
+      InputFrequency = input
     }
-    if(habit?.habitArea == 'Financeiro'){
-      return dataMoney
-    }
-    if(habit?.habitArea == 'Corpo'){
-      return dataBody
-    }
-      return dataFun
-  },[habit?.habitArea])
-
-  return(
-    <>
+  return (
+    <View style={{marginBottom:20}}>
       <SelectList
-        setSelected={setSelected}
         data={data}
         search={false}
-        onSelect={()=>{}}
+        setSelected={setSelected}
+        onSelect={()=>{handleInputFrequency}}
         placeholder={selected}
         boxStyles={styles.boxStyle}
         inputStyles={styles.inputStyle} 
@@ -50,9 +41,8 @@ export default function SelectHabit(habit:Habit) {
           />
         }
       />
-        
-      
-    </>
+
+    </View>
   )
 }
 
@@ -82,5 +72,4 @@ const styles = StyleSheet.create({
     width:20,
     height:20
   }
-
 })
