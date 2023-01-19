@@ -92,7 +92,7 @@ Para verificar a instalação e sua versão pode-se utilizar o seguinte comando:
 ```
 yarn --version
 ```
-<br>
+
 Para iniciar um projeto React Native foram seguindas as instruções oferecidas no site:
 <br>
 
