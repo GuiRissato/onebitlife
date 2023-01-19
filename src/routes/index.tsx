@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import AllPages from "./allpages";
+import HomePage from './HomePage';
 
 export default function Routes(){
-  return(
+   const [showHome, setShowHome] = useState<boolean>(false); 
+   return(
      <NavigationContainer independent={true}>
-        <AllPages/>
+        <>
+         {showHome == true ? <HomePage/> : <AllPages/>}
+        </>
      </NavigationContainer> 
     ) 
     

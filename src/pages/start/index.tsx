@@ -3,14 +3,15 @@ import { View, ScrollView, Image, Text, StyleSheet} from 'react-native';
 import LifeStatus from '../../components/common/LifeStatus';
 import DefaultButton from '../../components/common/DefaultButton/index';
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigator } from '../../routes/allpages';
 
 
 export default function Start(){
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigator>();
 
   const handleNavAppExplanations = () => {
-    navigation.navigate('AppExplanation', {undefined});
+    navigation.navigate('AppExplanation');
   }
 
   return(

@@ -5,8 +5,9 @@ import LifeStatus from "../../components/common/LifeStatus/index"
 import CreateHabit from "../../components/home/CreateHabit";
 import EditHabit from "../../components/home/EditHabit/index";
 import StatusBar from "../../components/home/StatusBar";
+import { StackNavigator } from "../../routes/allpages";
 
-interface Habit{
+export interface Habit{
   habitName: string,
   habitTime: any,
   habitFrequency: any,
@@ -15,14 +16,14 @@ interface Habit{
 }
 export default function Home(){
   
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackNavigator>();
   const [mindHabit, setMindHabit] = useState<Habit>();
   const [moneyHabit, setMoneyHabit] = useState<Habit>();
   const [bodyHabit, setBodyHabit] = useState<Habit>();
   const [funHabit, setFunHabit] = useState<Habit>();
   
   const handleNavExplanation = ()=>{
-    navigation.navigate("AppExplanation",{undefined})
+    navigation.navigate("AppExplanation")
   }
 
   return(
