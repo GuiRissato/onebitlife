@@ -10,10 +10,10 @@ interface EditHabit{
 
 export default function EditHabit(editHabit: EditHabit){
 function handleEdit(){
-  console.log("botao editar clicado")
+  // console.log("botao editar clicado")
 }
 function handleCheck(){
-  console.log("botao de check do", editHabit.habitArea)
+  // console.log("botao de check do", editHabit.habitArea)
 }
 
   return(

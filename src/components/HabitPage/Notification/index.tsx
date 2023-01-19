@@ -1,19 +1,17 @@
-import { RouteProp, useRoute } from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Text, Switch } from 'react-native';
-import { RootStackParamsList } from '../../../routes/allpages';
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import { Switch } from "react-native-gesture-handler";
 
+interface propsNotification{
+  notificationToggle: boolean,
+  setNotificationToggle: (b:boolean) => void,
+}
 
-type RouteHabitScreenProps = RouteProp<RootStackParamsList,'Notification'>
-
-export default function Notification(){
-
-  const route = useRoute<RouteHabitScreenProps>();
-  const [notificationToggle,setNotificationToggle] = useState<boolean>();
+export default function Notification(notification:propsNotification){
   
   const toggleSwitch = () =>
   {
-    setNotificationToggle((previousState)=>!previousState)
+    notification.setNotificationToggle(!notification.notificationToggle)
   }
   
   return(
@@ -25,7 +23,7 @@ export default function Notification(){
         thumbColor={"FFFFFF"}
         ios_backgroundColor="#3e3e3e"
         onValueChange={toggleSwitch}
-        value={notificationToggle}
+        value={notification.notificationToggle}
       />
     </View>
     </>
@@ -36,12 +34,14 @@ const styles = StyleSheet.create({
   container:{
     flexDirection: 'row',
     alignItems:'center',
+    marginTop:15,
     marginBottom:20,
   },
   title:{
     color:'white',
-    fontSize:20,
+    fontSize:16,
     marginRight:10,
+    marginLeft:5,
   },
 
 })

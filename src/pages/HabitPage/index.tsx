@@ -1,23 +1,23 @@
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
-import React, { useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import { Image, ScrollView, StyleSheet, TouchableOpacity, View, Text } from 'react-native';
 import { RootStackParamsList } from '../../routes/allpages';
 import SelectHabit from '../../components/HabitPage/SelectHabit';
 import SelectFrequency from '../../components/HabitPage/SelectFrequency';
 import Notification from '../../components/HabitPage/Notification';
-
+import DateTimePickerElement from '../../components/HabitPage/DateTimePicker';
 
 type RouteHabitScreenProps = RouteProp<RootStackParamsList,'HabitPage'>
 
 export default function HabitPage(){
   const navigation = useNavigation();
   const route = useRoute<RouteHabitScreenProps>();
-  const {create,habitArea} = route.params
-  const [habitInput,setHabitInput] = useState<string>();
-  
-  const input = useMemo(()=>{
-    console.log(habitInput)
-  },[habitInput])
+  const {create,habitArea,habit} = route.params
+  const [habitInput,setHabitInput] = useState<string|undefined>("");
+  const [habitFrequency, setHabitFrequency] = useState<string>("")
+  const [habitNotification, setHabitNotification] = useState<boolean>(false);
+  const [dayNotification,setDayNotification] = useState<string>();
+  const [timeNotification,setTimeNotification] = useState<string>();
 
   return(
     <View style={styles.container}>
@@ -42,10 +42,21 @@ export default function HabitPage(){
               <Text style={styles.area}>{habitArea}</Text>
             </View>
             <Text style={styles.inputText}>Hábito</Text>
-            <SelectHabit/>
+            <SelectHabit habit={habit} habitInput={setHabitInput}/>
             <Text style={styles.inputText}>Frequência</Text>
-            <SelectFrequency/>
-            <Notification/>
+            <SelectFrequency habit={habit} frequencyInput={setHabitFrequency}/>
+            {habitFrequency == "Mensal" ? null :(
+              <Notification notificationToggle={habitNotification} setNotificationToggle={setHabitNotification} />
+            )}
+            {habitNotification ? (habitFrequency == "Mensal" ? null :(
+              <DateTimePickerElement 
+                frequency={habitFrequency}
+                dayNotification={dayNotification}
+                timeNotification={timeNotification}
+                setDayNotification={setDayNotification}
+                setTimeNotification={setTimeNotification}/>
+            )):null}
+            
           </View>
         </View>
       </ScrollView>
