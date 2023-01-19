@@ -19,6 +19,8 @@ import org.reactnative.maskedview.RNCMaskedViewPackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
+// react-native-material-datetime-picker
+import com.thespacemanatee.react_native_material_datetime_picker.MaterialDatetimePickerPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -74,6 +76,7 @@ public class PackageList {
       new RNCMaskedViewPackage(),
       new LottiePackage(),
       new RNGestureHandlerPackage(),
+      new MaterialDatetimePickerPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage()
