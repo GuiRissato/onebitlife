@@ -87,16 +87,13 @@ Foi utilizado o yarn para o gerenciamento dos pacotes do projeto. O yarn pode se
 ```
 npm install --global yarn
 ```
-<br>
+
 Para verificar a instalação e sua versão pode-se utilizar o seguinte comando:
 ```
 yarn --version
 ```
 
-Para iniciar um projeto React Native foram seguindas as instruções oferecidas no site:
-<br>
-
-https://reactnative.dev/docs/environment-setup
+Para iniciar um projeto React Native foram seguindas as instruções disponibilizadas no site: https://reactnative.dev/docs/environment-setup
 
 <br>
 
