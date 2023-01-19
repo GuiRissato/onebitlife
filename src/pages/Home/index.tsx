@@ -26,6 +26,15 @@ export default function Home(){
     navigation.navigate("AppExplanation")
   }
 
+  const createHabit:Habit = {
+    
+    habitName: "",
+    habitArea: "",
+    habitFrequency: undefined,
+    habitTime: undefined,
+    checkColor: ''
+}
+
   return(
     <View style={styles.container}>
       <ScrollView>
@@ -39,7 +48,7 @@ export default function Home(){
               frequency={`${mindHabit?.habitTime} - ${mindHabit?.habitFrequency} `} 
               habitArea={mindHabit?.habitArea} 
               checkColor={"#90B7F3"}
-            />) : (<CreateHabit habitArea={"Mente"} borderColor={"#90B7F3"}/>)}
+            />) : (<CreateHabit habitArea={"Mente"} borderColor={"#90B7F3"} habit={createHabit}/>)}
             
             {moneyHabit ? 
             (<EditHabit 
@@ -47,7 +56,7 @@ export default function Home(){
               frequency={`${moneyHabit?.habitTime} - ${moneyHabit?.habitFrequency} `}
               habitArea={moneyHabit?.habitArea}
               checkColor={"#85BB65"}
-            />) : (<CreateHabit habitArea={"Financeiro"} borderColor={"#85BB65"}/>)}
+            />) : (<CreateHabit habitArea={"Financeiro"} borderColor={"#85BB65"} habit={createHabit}/>)}
             
             {bodyHabit ? 
             (<EditHabit 
@@ -55,7 +64,7 @@ export default function Home(){
               frequency={`${bodyHabit?.habitTime} - ${bodyHabit?.habitFrequency} `}
               habitArea={bodyHabit?.habitArea}
               checkColor={"#85BB65"}
-            />) : (<CreateHabit habitArea={"Corpo"} borderColor={"#FF0044"}/>)}
+            />) : (<CreateHabit habitArea={"Corpo"} borderColor={"#FF0044"} habit={createHabit}/>)}
 
             {funHabit ? 
             (<EditHabit 
@@ -63,7 +72,7 @@ export default function Home(){
               frequency={`${funHabit?.habitTime} - ${funHabit?.habitFrequency} `}
               habitArea={funHabit?.habitArea}
               checkColor={"#85BB65"}
-            />) : (<CreateHabit habitArea={"Humor"} borderColor={"#FE7F23"}/>)}
+            />) : (<CreateHabit habitArea={"Humor"} borderColor={"#FE7F23"} habit={createHabit}/>)}
         </View>
         <Text
           style = {styles.explanationText}

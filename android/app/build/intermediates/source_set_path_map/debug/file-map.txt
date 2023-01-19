@@ -31,8 +31,9 @@ com.onebitlife.app-mergeDebugResources-29 /home/guilherme/Documentos/GitHub/oneb
 com.onebitlife.app-merged_res-30 /home/guilherme/Documentos/GitHub/onebitlife/android/app/build/intermediates/merged_res/debug
 com.onebitlife.app-debug-31 /home/guilherme/Documentos/GitHub/onebitlife/android/app/src/debug/res
 com.onebitlife.app-main-32 /home/guilherme/Documentos/GitHub/onebitlife/android/app/src/main/res
-com.onebitlife.app-packaged_res-33 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/@react-native-community/masked-view/android/build/intermediates/packaged_res/debug
-com.onebitlife.app-packaged_res-34 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/lottie-react-native/src/android/build/intermediates/packaged_res/debug
-com.onebitlife.app-packaged_res-35 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/react-native-gesture-handler/android/build/intermediates/packaged_res/debug
-com.onebitlife.app-packaged_res-36 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
-com.onebitlife.app-packaged_res-37 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.onebitlife.app-packaged_res-33 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/@react-native-community/datetimepicker/android/build/intermediates/packaged_res/debug
+com.onebitlife.app-packaged_res-34 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/@react-native-community/masked-view/android/build/intermediates/packaged_res/debug
+com.onebitlife.app-packaged_res-35 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/lottie-react-native/src/android/build/intermediates/packaged_res/debug
+com.onebitlife.app-packaged_res-36 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/react-native-gesture-handler/android/build/intermediates/packaged_res/debug
+com.onebitlife.app-packaged_res-37 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
+com.onebitlife.app-packaged_res-38 /home/guilherme/Documentos/GitHub/onebitlife/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug

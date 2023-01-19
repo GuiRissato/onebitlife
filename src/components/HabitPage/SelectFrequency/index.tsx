@@ -1,33 +1,31 @@
-import { RouteProp, useRoute } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import {Image,View,StyleSheet} from "react-native";
 import { SelectList } from 'react-native-dropdown-select-list';
-import { RootStackParamsList } from '../../../routes/allpages';
+import { Habit } from '../../../pages/Home';
 
-type RouteHabitScreenProps = RouteProp<RootStackParamsList,'SelectFrequency'>
+interface propsSelectFrequency{
+  habit:Habit,
+  frequencyInput: (s:string) => void
+}
 
-export default function SelectFrequency (){
-  const route = useRoute<RouteHabitScreenProps>();
-  let {habit,habitFrequency,InputFrequency} = route.params
+export default function SelectFrequency (props:propsSelectFrequency){
+
   const [selected, setSelected] = useState(
-    habitFrequency ? habitFrequency : "-"
+    props.habit?.habitFrequency ? props.habit?.habitFrequency : "-"
   )  
     const data = [
-      {key:"Diario", value:"Diario"},
+      {key:"Diario", value:"Diário"},
       {key:"Semanal", value:"Semanal"},
       {key:"Mensal", value:"Mensal"},
     ]
-
-    const handleInputFrequency = (input:string) =>{
-      InputFrequency = input
-    }
+  
   return (
     <View style={{marginBottom:20}}>
       <SelectList
         data={data}
         search={false}
         setSelected={setSelected}
-        onSelect={()=>{handleInputFrequency}}
+        onSelect={()=>{props.frequencyInput(selected)}}
         placeholder={selected}
         boxStyles={styles.boxStyle}
         inputStyles={styles.inputStyle} 

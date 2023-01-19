@@ -1,44 +1,36 @@
-import { RouteProp, useRoute } from '@react-navigation/native'
 import React, { useMemo, useState } from 'react'
 import { Image, StyleSheet } from 'react-native';
 import { SelectList } from 'react-native-dropdown-select-list';
 import {dataMind,dataMoney,dataBody,dataFun} from '../../Database/HabitData';
-import { RootStackParamsList } from '../../../routes/allpages';
+import { Habit } from '../../../pages/Home';
 
-type RouteHabitScreenProps = RouteProp<RootStackParamsList,'SelectHabit'>
+interface propsSelectHabit{
+  habit:Habit,
+  habitInput: (s:string|undefined) => void
+}
 
-export default function SelectHabit() {
+export default function SelectHabit(props:propsSelectHabit) {
   
-  const route = useRoute<RouteHabitScreenProps>();
-  let {habit,habitArea,InputHabit} = route.params  
   const [selected,setSelected] = useState(
-   habit?.habitName ? habit?.habitName : "-"
+   props.habit?.habitName ? props.habit?.habitName : "-"
   );
 
-  
-  const handleInputHabit = (input:string) =>{
-    InputHabit = input
-  }
-
   const data:any = useMemo(()=>{
-    if(habitArea == 'Mente'){
+    if(props.habit?.habitArea == 'Mente'){
       return dataMind
     }
-    if(habitArea == 'Financeiro'){
+    if(props.habit?.habitArea == 'Financeiro'){
       return dataMoney
     }
-    if(habitArea == 'Corpo'){
+    if(props.habit?.habitArea == 'Corpo'){
       return dataBody
     }
-    if(habitArea == 'Humor'){
+    if(props.habit?.habitArea == 'Humor'){
       return dataFun
     }
-    if(habit?.habitName){
-     return InputHabit = habit?.habitName
-    }
-    return InputHabit = undefined
+    props.habitInput(props.habit?.habitName ? props.habit?.habitName : undefined)
     
-  },[habitArea])
+  },[props.habit?.habitArea])
 
   return(
     <>
@@ -46,7 +38,7 @@ export default function SelectHabit() {
         setSelected={setSelected}
         data={data}
         search={false}
-        onSelect={()=>{handleInputHabit(selected)}}
+        onSelect={()=>{props.habitInput(selected)}}
         placeholder={selected}
         boxStyles={styles.boxStyle}
         inputStyles={styles.inputStyle} 
@@ -60,8 +52,6 @@ export default function SelectHabit() {
           />
         }
       />
-        
-      
     </>
   )
 }
@@ -92,5 +82,4 @@ const styles = StyleSheet.create({
     width:20,
     height:20
   }
-
 })
