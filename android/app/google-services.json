@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "155080312318",
+    "project_id": "onebitlife-423a1",
+    "storage_bucket": "onebitlife-423a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155080312318:android:c0a75007a5deea1f43ecaf",
+        "android_client_info": {
+          "package_name": "com.onebitlife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155080312318-73ts3tcnhattsi5kufdak4bb6gqc1pt6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.onebitlife",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "155080312318-n90fbm8fogl2q3e49fq9oh815f4u7cq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3uYBr4jsLC4KVKbpjLW63daLmg7_ZnlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155080312318-n90fbm8fogl2q3e49fq9oh815f4u7cq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">155080312318-n90fbm8fogl2q3e49fq9oh815f4u7cq9.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">155080312318</string>
+    <string name="google_api_key" translatable="false">AIzaSyB3uYBr4jsLC4KVKbpjLW63daLmg7_ZnlI</string>
+    <string name="google_app_id" translatable="false">1:155080312318:android:c0a75007a5deea1f43ecaf</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB3uYBr4jsLC4KVKbpjLW63daLmg7_ZnlI</string>
+    <string name="google_storage_bucket" translatable="false">onebitlife-423a1.appspot.com</string>
+    <string name="project_id" translatable="false">onebitlife-423a1</string>
+</resources>

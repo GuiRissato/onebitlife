@@ -6,10 +6,14 @@ import SelectHabit from '../../components/HabitPage/SelectHabit';
 import SelectFrequency from '../../components/HabitPage/SelectFrequency';
 import Notification from '../../components/HabitPage/Notification';
 import DateTimePickerElement from '../../components/HabitPage/DateTimePicker';
+import { LocalNotification } from '../../services/LocalPushController';
 
 type RouteHabitScreenProps = RouteProp<RootStackParamsList,'HabitPage'>
 
 export default function HabitPage(){
+
+
+
   const navigation = useNavigation();
   const route = useRoute<RouteHabitScreenProps>();
   const {create,habitArea,habit} = route.params
@@ -18,6 +22,8 @@ export default function HabitPage(){
   const [habitNotification, setHabitNotification] = useState<boolean>(false);
   const [dayNotification,setDayNotification] = useState<string>();
   const [timeNotification,setTimeNotification] = useState<string>();
+
+  
 
   return(
     <View style={styles.container}>
@@ -33,6 +39,12 @@ export default function HabitPage(){
             />
 
           </TouchableOpacity>
+          {/* <TouchableOpacity
+            style={styles.inputContainer}
+            onPress={()=>{LocalNotification()}}
+          >
+            <Text>Notificação</Text>
+          </TouchableOpacity> */}
           <View style={styles.mainContent}>
             <Text style={styles.title}>
               Configuração {"\n"} de hábito

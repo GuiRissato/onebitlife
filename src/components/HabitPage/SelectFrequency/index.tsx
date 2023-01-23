@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import {Image,View,StyleSheet} from "react-native";
 import { SelectList } from 'react-native-dropdown-select-list';
 import { Habit } from '../../../pages/Home';
@@ -18,6 +18,9 @@ export default function SelectFrequency (props:propsSelectFrequency){
       {key:"Semanal", value:"Semanal"},
       {key:"Mensal", value:"Mensal"},
     ]
+  const updateFrequency = useCallback(()=>{
+    props.frequencyInput(selected)
+  },[props.frequencyInput,selected])
   
   return (
     <View style={{marginBottom:20}}>
@@ -25,7 +28,7 @@ export default function SelectFrequency (props:propsSelectFrequency){
         data={data}
         search={false}
         setSelected={setSelected}
-        onSelect={()=>{props.frequencyInput(selected)}}
+        onSelect={updateFrequency}
         placeholder={selected}
         boxStyles={styles.boxStyle}
         inputStyles={styles.inputStyle} 
