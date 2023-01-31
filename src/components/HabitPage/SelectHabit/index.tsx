@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { Image, StyleSheet } from 'react-native';
 import { SelectList } from 'react-native-dropdown-select-list';
-import {dataMind,dataMoney,dataBody,dataFun} from '../../Database/HabitData';
+import {dataMind,dataMoney,dataBody,dataFun} from '../../../Database/HabitData';
 import { Habit } from '../../../pages/Home';
 
 interface propsSelectHabit{
